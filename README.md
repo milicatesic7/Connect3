@@ -1,9 +1,9 @@
 # Connect 3
 
 <p align="center">
-  <img src="screenshots/home.jpeg" width="240"/>
-  <img src="screenshots/game.jpeg" width="240"/>
-  <img src="screenshots/winner.jpeg" width="240"/>
+  <img src="screenshots/home.png" width="240"/>
+  <img src="screenshots/game.png" width="240"/>
+  <img src="screenshots/winner.png" width="240"/>
 </p>
 
 A mobile-first implementation of the classic **Connect 3** game featuring an intelligent AI opponent powered by the **Minimax algorithm** and a **Decision Tree**.
