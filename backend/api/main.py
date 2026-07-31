@@ -11,7 +11,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://192.168.1.5:5173",
+        "https://connect3-mu.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
