@@ -6,6 +6,10 @@
   <img src="screenshots/winner.png" width="240"/>
 </p>
 
+## Live Demo
+
+https://connect3-mu.vercel.app
+
 A mobile-first implementation of the classic **Connect 3** game featuring an intelligent AI opponent powered by the **Minimax algorithm** and a **Decision Tree**.
 
 The application consists of a React frontend and a FastAPI backend. The AI evaluates possible game states using Minimax search and selects the optimal move based on the configured search depth.

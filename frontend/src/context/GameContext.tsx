@@ -36,7 +36,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const [finished, setFinished] = useState(false);
 
-  const [difficulty, setDifficulty] = useState(8);
+  const [difficulty, setDifficulty] = useState(6);
 
   async function newGame(depth: number) {
     setLoading(true);
