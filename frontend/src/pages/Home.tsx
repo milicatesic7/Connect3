@@ -8,6 +8,7 @@ import InfoCard from "../components/ui/InfoCard";
 import DifficultyCard from "../components/ui/DifficultyCard";
 
 import backgroundVideo from "../assets/media/bg.mp4";
+import LoadingOverlay from "../components/ui/LoadingOverlay";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -109,6 +110,7 @@ export default function Home() {
           </section>
         </div>
       </div>
+      {loading && <LoadingOverlay />}
     </div>
   );
 }

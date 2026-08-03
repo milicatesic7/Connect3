@@ -74,3 +74,54 @@ body {
     height: calc(100% / 0.9);
   }
 }
+
+@keyframes drop1 {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes drop2 {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes drop3 {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+.animate-\[drop1_1\.2s_infinite\] {
+  animation: drop1 1.2s infinite;
+}
+
+.animate-\[drop2_1\.2s_infinite\] {
+  animation: drop2 1.2s infinite 0.2s;
+}
+
+.animate-\[drop3_1\.2s_infinite\] {
+  animation: drop3 1.2s infinite 0.4s;
+}
