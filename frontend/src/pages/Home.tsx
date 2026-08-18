@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useGame } from "../context/GameContext";
@@ -6,14 +7,18 @@ import Divider from "../components/ui/Divider";
 import Button from "../components/ui/Button";
 import InfoCard from "../components/ui/InfoCard";
 import DifficultyCard from "../components/ui/DifficultyCard";
+import LoadingOverlay from "../components/ui/LoadingOverlay";
 
 import backgroundVideo from "../assets/media/bg.mp4";
-import LoadingOverlay from "../components/ui/LoadingOverlay";
 
 export default function Home() {
   const navigate = useNavigate();
 
   const { difficulty, setDifficulty, newGame, loading } = useGame();
+
+  useEffect(() => {
+    fetch("https://connect3-ad2h.onrender.com/").catch(() => {});
+  }, []);
 
   async function handlePlay() {
     await newGame(difficulty);
@@ -37,16 +42,15 @@ export default function Home() {
       <div className="relative z-10 flex h-full min-h-full justify-center px-6 py-6 md:py-10">
         <div
           className="
-    grid
-    h-full
-    w-full
-    max-w-sm
-
-    grid-rows-[auto_1fr_auto]
-  "
+            grid
+            h-full
+            w-full
+            max-w-sm
+            grid-rows-[auto_1fr_auto]
+          "
         >
           <section>
-            <h1 className="heading-font mb-6 text-center text-4xl md:text-5xl text-white">
+            <h1 className="heading-font mb-6 text-center text-4xl text-white md:text-5xl">
               Connect<span className="text-[var(--yellow)]"> 3</span>
             </h1>
 
@@ -80,12 +84,14 @@ export default function Home() {
                 selected={difficulty === 4}
                 onClick={setDifficulty}
               />
+
               <DifficultyCard
                 title="Medium"
                 depth={6}
                 selected={difficulty === 6}
                 onClick={setDifficulty}
               />
+
               <DifficultyCard
                 title="Hard"
                 depth={8}
@@ -101,6 +107,7 @@ export default function Home() {
                   <span className="text-[var(--yellow)]"> Yellow </span>
                   player.
                 </p>
+
                 <p>
                   The AI plays in
                   <span className="text-[var(--green)]"> Green</span>.
@@ -110,6 +117,7 @@ export default function Home() {
           </section>
         </div>
       </div>
+
       {loading && <LoadingOverlay />}
     </div>
   );
