@@ -62,3 +62,7 @@ def computer_move(request: GameRequest):
     game = games[request.game_id]
 
     return game.play_computer_turn()
+
+@app.api_route("/health", methods=["GET", "HEAD"])
+def health():
+    return {"ok": True}
