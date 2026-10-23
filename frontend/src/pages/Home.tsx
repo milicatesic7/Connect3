@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useGame } from "../context/GameContext";
@@ -13,14 +13,11 @@ import backgroundVideo from "../assets/media/bg.mp4";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [serverReady, setServerReady] = useState(false);
 
   const { difficulty, setDifficulty, newGame, loading } = useGame();
 
   useEffect(() => {
-    fetch("https://connect3-ad2h.onrender.com/")
-      .catch(() => {})
-      .finally(() => setServerReady(true));
+    fetch("https://connect3-ad2h.onrender.com/").catch(() => {});
   }, []);
 
   async function handlePlay() {
@@ -69,7 +66,7 @@ export default function Home() {
             </InfoCard>
 
             <div className="mt-4 w-4/5">
-              <Button onClick={handlePlay} disabled={loading || !serverReady}>
+              <Button onClick={handlePlay} disabled={loading}>
                 {loading ? "Starting..." : "PLAY"}
               </Button>
             </div>
